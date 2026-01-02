@@ -763,6 +763,7 @@
     <string name="as_text"
         comment="Like copy as text, but in short"
         >As text</string>
+    <string name="genius">Open in Genius</string>
 
 <!--  pro  -->
     <string name="get_pro">Support this app</string>

@@ -92,6 +92,7 @@ import com.arn.scrobble.utils.Stuff.format
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.resources.vectorResource
 import pano_scrobbler.composeapp.generated.resources.Res
 import pano_scrobbler.composeapp.generated.resources.add_photo
 import pano_scrobbler.composeapp.generated.resources.album_art
@@ -100,6 +101,8 @@ import pano_scrobbler.composeapp.generated.resources.collapse
 import pano_scrobbler.composeapp.generated.resources.copy
 import pano_scrobbler.composeapp.generated.resources.delete
 import pano_scrobbler.composeapp.generated.resources.expand
+import pano_scrobbler.composeapp.generated.resources.genius
+import pano_scrobbler.composeapp.generated.resources.genius_logo
 import pano_scrobbler.composeapp.generated.resources.listeners
 import pano_scrobbler.composeapp.generated.resources.love
 import pano_scrobbler.composeapp.generated.resources.more_info
@@ -613,6 +616,21 @@ private fun InfoActionsRow(
                 },
                 icon = Icons.OpenInBrowser,
                 contentDescription = stringResource(Res.string.more_info),
+            )
+        }
+
+        if (!PlatformStuff.isTv) {
+            IconButtonWithTooltip(
+                onClick = {
+                    val urlArguments = when (entry) {
+                        is Track -> entry.artist.name + "%20" + entry.name
+                        is Album -> entry.artist?.name.orEmpty() + "%20" + entry.name
+                        is Artist -> entry.name
+                    }
+                    PlatformStuff.openInBrowser("https://genius.com/search?q=$urlArguments")
+                },
+                icon = vectorResource(Res.drawable.genius_logo),
+                contentDescription = stringResource(Res.string.genius),
             )
         }
 
