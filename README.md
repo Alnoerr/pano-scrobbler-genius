@@ -1,4 +1,9 @@
-## <img src="composeApp/src/commonMain/composeResources/drawable/ic_launcher_with_bg.svg" alt="app icon" width="32"/> Pano Scrobbler
+## <img src="composeApp/src/commonMain/composeResources/drawable/ic_launcher_with_bg.svg" alt="app icon" width="32"/> Pano Scrobbler with Genius
+
+Implemented a Genius shortcut to access lyrics and additional information
+
+| <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6-genius-mobile.png"> |
+|-----------------------------------------------------------------------------------------|
 
 [\[repository\]](https://github.com/kawaiiDango/pano-scrobbler)
 
